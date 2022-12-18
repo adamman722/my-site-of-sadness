@@ -5,7 +5,7 @@ import LandingPage from "./components/LandingPage";
 
 export const router = createBrowserRouter([
   {
-    path: "/my-site-of-sadness",
+    path: "/",
     element: <LandingPage />,
     children: [
       {
@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
     ],
     errorElement: (
       <div>
-        <h1>Wrongggg</h1>
+        <h1>Hmmmmm seems to be an error here</h1>
       </div>
     ),
   },

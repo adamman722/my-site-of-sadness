@@ -142,7 +142,7 @@ export default function PersistentDrawerLeft() {
         <List>
           {["Home", "About Me"].map((text, index) => (
             <Link
-              to={text}
+              to={text === "Home" ? "/" : text}
               style={{ textDecoration: "none", color: "hotpink" }}
             >
               <ListItem key={text} disablePadding>
