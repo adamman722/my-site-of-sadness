@@ -1,7 +1,7 @@
 {
   "name": "my-site-of-sadness",
   "version": "0.1.0",
-  "homepage": "https://gitname.github.io/react-gh-pages",
+  "homepage": "https://adamman722.github.io/my-site-of-sadness",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
