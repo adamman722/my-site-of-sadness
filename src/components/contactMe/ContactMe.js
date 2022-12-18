@@ -35,8 +35,8 @@ function ContactMe() {
           <label>Email</label>
           <input type="email" name="user_email" />
           <label>Message</label>
-          <textarea name="message" />
-          <input type="submit" value="Send" />
+          <textarea name="message" cols="42" />
+          <input type="submit" value="Send" style={{ cursor: "pointer" }} />
         </form>
       </article>
     </DefaultCard>

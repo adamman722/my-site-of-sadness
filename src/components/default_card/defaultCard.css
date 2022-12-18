@@ -1,9 +1,9 @@
 .outer-box {
   background: #8093f1;
   padding: 5px;
-  box-shadow: 0.5px 0.5px 0 0.5px black, inset 1px 1px #c2c6ca,
-    inset -1px -1px #85898d, inset 2px 2px white;
+  box-shadow: 0.5px 0.5px 0 0.5px black, inset 1px 1px #c2c6ca, inset -1px -1px #85898d, inset 2px 2px white;
   width: 50%;
+  margin: auto;
 }
 
 .head-section {
@@ -32,8 +32,7 @@
   padding: 0;
 }
 .small-box-container:active {
-  box-shadow: 0.5px 0.5px 0 0.5px white, inset 1px 1px black,
-    inset -1px -1px #c2c6ca, inset 2px 2px #85898d;
+  box-shadow: 0.5px 0.5px 0 0.5px white, inset 1px 1px black, inset -1px -1px #c2c6ca, inset 2px 2px #85898d;
 }
 
 .small-box {
@@ -53,8 +52,7 @@
   cursor: pointer;
 }
 .underscore:active {
-  box-shadow: 0.5px 0.5px 0 0.5px white, inset 1px 1px black,
-    inset -1px -1px #c2c6ca, inset 2px 2px #85898d;
+  box-shadow: 0.5px 0.5px 0 0.5px white, inset 1px 1px black, inset -1px -1px #c2c6ca, inset 2px 2px #85898d;
 }
 
 .close-x {
@@ -67,8 +65,7 @@
   cursor: pointer;
 }
 .close-x:active {
-  box-shadow: 0.5px 0.5px 0 0.5px white, inset 1px 1px black,
-    inset -1px -1px #c2c6ca, inset 2px 2px #85898d;
+  box-shadow: 0.5px 0.5px 0 0.5px white, inset 1px 1px black, inset -1px -1px #c2c6ca, inset 2px 2px #85898d;
 }
 
 .inner-box {
