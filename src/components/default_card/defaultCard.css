@@ -1,0 +1,82 @@
+.outer-box {
+  background: #8093f1;
+  padding: 5px;
+  box-shadow: 0.5px 0.5px 0 0.5px black, inset 1px 1px #c2c6ca,
+    inset -1px -1px #85898d, inset 2px 2px white;
+  width: 50%;
+}
+
+.head-section {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdc5f5;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 1px;
+}
+
+.button-container {
+  display: flex;
+  gap: 5px;
+}
+
+.small-box-container {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+}
+.small-box-container:active {
+  box-shadow: 0.5px 0.5px 0 0.5px white, inset 1px 1px black,
+    inset -1px -1px #c2c6ca, inset 2px 2px #85898d;
+}
+
+.small-box {
+  border: 2px solid black;
+  width: 7px;
+  height: 7px;
+  cursor: pointer;
+}
+
+.underscore {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.underscore:active {
+  box-shadow: 0.5px 0.5px 0 0.5px white, inset 1px 1px black,
+    inset -1px -1px #c2c6ca, inset 2px 2px #85898d;
+}
+
+.close-x {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.close-x:active {
+  box-shadow: 0.5px 0.5px 0 0.5px white, inset 1px 1px black,
+    inset -1px -1px #c2c6ca, inset 2px 2px #85898d;
+}
+
+.inner-box {
+  border-radius: 1px;
+  border: 1.2px solid black;
+  clear: both;
+  padding: 25px;
+  background-color: #72ddf7;
+}
+
+/*# sourceMappingURL=defaultCard.css.map */

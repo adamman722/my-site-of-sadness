@@ -1,8 +1,8 @@
 import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
+import "./landing_page_styles/styles.css";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import CssBaseline from "@mui/material/CssBaseline";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
@@ -19,6 +19,7 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { Link, Outlet } from "react-router-dom";
+import logo from "../assets/Img/MyLogo.png";
 
 const drawerWidth = 240;
 
@@ -84,7 +85,12 @@ export default function PersistentDrawerLeft() {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box
+      sx={{
+        display: "flex",
+        height: "100vh",
+      }}
+    >
       {/* <CssBaseline /> */}
       <AppBar position="fixed" open={open}>
         <Toolbar>
@@ -125,7 +131,6 @@ export default function PersistentDrawerLeft() {
             minHeight: "66px",
           }}
         >
-          <h3>little logo here</h3>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon />
@@ -155,18 +160,29 @@ export default function PersistentDrawerLeft() {
         <Divider sx={{ borderColor: "black", borderWidth: "1px" }} />
         <List>
           {["My work", "Simple Components", "Contact me"].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
+            <Link
+              to={text}
+              style={{ textDecoration: "none", color: "hotpink" }}
+            >
+              <ListItem key={text} disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  </ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItemButton>
+              </ListItem>
+            </Link>
           ))}
         </List>
       </Drawer>
-      <Main open={open}>
+      <Main
+        open={open}
+        sx={{
+          background:
+            "radial-gradient(circle, rgba(179,136,235,0.5986078886310905) 0%, rgba(247,174,248,0.5986078886310905) 63%, rgba(255,255,255,1) 83%)",
+        }}
+      >
         <DrawerHeader />
         {/* My elements goe here */}
         <Outlet />
