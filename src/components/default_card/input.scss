@@ -5,8 +5,19 @@
     inset -1px -1px #85898d, inset 2px 2px white;
   width: fit-content;
   margin: auto;
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+.outer-box.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
 }
 .head-section {
+  position: relative;
   display: flex;
   gap: 10px;
   justify-content: space-between;
