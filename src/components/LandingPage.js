@@ -1,6 +1,7 @@
 import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import "./landing_page_styles/styles.css";
+import logo from "../assets/Img/MyLogo.png";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
@@ -19,8 +20,10 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { Link, Outlet } from "react-router-dom";
+import Container from "@mui/material/Container";
+import { Stack } from "@mui/system";
 
-const drawerWidth = 240;
+// const drawerWidth = 240;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
   ({ theme, open }) => ({
@@ -30,7 +33,7 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: `-${drawerWidth}px`,
+    // marginLeft: `-${drawerWidth}px`,
     ...(open && {
       transition: theme.transitions.create("margin", {
         easing: theme.transitions.easing.easeOut,
@@ -52,8 +55,8 @@ const AppBar = styled(MuiAppBar, {
     duration: theme.transitions.duration.leavingScreen,
   }),
   ...(open && {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: `${drawerWidth}px`,
+    // width: `calc(100% - ${drawerWidth}px)`,
+    // marginLeft: `${drawerWidth}px`,
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
@@ -93,21 +96,51 @@ export default function PersistentDrawerLeft() {
       {/* <CssBaseline /> */}
       <AppBar position="fixed" open={open}>
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             color="inherit"
             aria-label="open drawer"
-            onClick={handleDrawerOpen}
+            // onClick={handleDrawerOpen}
             edge="start"
             sx={{ mr: 2, ...(open && { display: "none" }) }}
           >
             <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            My Simple site
-          </Typography>
+          </IconButton> */}
+
+          <Container maxWidth="lg">
+            <Stack direction="row" justifyContent="space-between">
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ margin: "auto" }}
+              >
+                My Simple site
+              </Typography>
+              <Stack direction="row" justifyContent="end" spacing={5}>
+                {[
+                  "Home",
+                  "About Me",
+                  "My work",
+                  "Simple Components",
+                  "Contact me",
+                ].map((text, index) => (
+                  <Link
+                    to={text === "Home" ? "/" : text}
+                    style={{
+                      textDecoration: "none",
+                      color: "white",
+                      padding: "10px",
+                    }}
+                  >
+                    <Typography variant="h6">{text}</Typography>
+                  </Link>
+                ))}
+              </Stack>
+            </Stack>
+          </Container>
         </Toolbar>
       </AppBar>
-      <Drawer
+      {/* <Drawer
         sx={{
           width: drawerWidth,
           flexShrink: 0,
@@ -175,15 +208,15 @@ export default function PersistentDrawerLeft() {
           ))}
         </List>
       </Drawer>
+        <DrawerHeader /> */}
+      {/* My elements goe here */}
       <Main
-        open={open}
+        // open={open}
         sx={{
           background:
             "radial-gradient(circle, rgba(179,136,235,0.5986078886310905) 0%, rgba(247,174,248,0.5986078886310905) 63%, rgba(255,255,255,1) 83%)",
         }}
       >
-        <DrawerHeader />
-        {/* My elements goe here */}
         <Outlet />
       </Main>
     </Box>
