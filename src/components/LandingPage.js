@@ -160,8 +160,11 @@ export default function PersistentDrawerLeft() {
             backgroundColor: "hotpink",
             borderBottom: "2px solid black",
             minHeight: "66px",
+            display: "flex",
+            justifyContent: "space-between",
           }}
         >
+          <h3>My Simple site of Sadness</h3>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? <ArrowUpawrd /> : <ArrowUpawrd />}
           </IconButton>
