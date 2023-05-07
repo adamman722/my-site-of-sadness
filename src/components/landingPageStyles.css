@@ -18,11 +18,11 @@ nav {
     display: none;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .Cheese {
     display: none;
   }
   .title-of-site {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 }
