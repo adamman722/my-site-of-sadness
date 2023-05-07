@@ -190,22 +190,24 @@ export default function PersistentDrawerLeft() {
         </List>
         <Divider sx={{ borderColor: "black", borderWidth: "1px" }} />
         <List>
-          {["My work", "Simple Components", "Contact me"].map((text, index) => (
-            <Link
-              to={text}
-              style={{ textDecoration: "none", color: "hotpink" }}
-              onClick={handleDrawerClose}
-            >
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            </Link>
-          ))}
+          {["My work", "Simple Components", "Contact me", "Resources"].map(
+            (text, index) => (
+              <Link
+                to={text}
+                style={{ textDecoration: "none", color: "hotpink" }}
+                onClick={handleDrawerClose}
+              >
+                <ListItem key={text} disablePadding>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItemButton>
+                </ListItem>
+              </Link>
+            )
+          )}
         </List>
       </Drawer>
       {/* <DrawerHeader /> */}
@@ -215,6 +217,8 @@ export default function PersistentDrawerLeft() {
         sx={{
           background:
             "radial-gradient(circle, rgba(179,136,235,0.5986078886310905) 0%, rgba(247,174,248,0.5986078886310905) 63%, rgba(255,255,255,1) 83%)",
+          backgroundAttachment: "fixed",
+          backgroundRepeat: "no-repeat",
         }}
       >
         {/* This is where other components get outputted */}
