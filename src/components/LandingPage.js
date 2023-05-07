@@ -92,6 +92,7 @@ export default function PersistentDrawerLeft() {
     <Box
       sx={{
         display: "flex",
+        minHeight: "100vh",
       }}
     >
       {/* <CssBaseline /> */}
