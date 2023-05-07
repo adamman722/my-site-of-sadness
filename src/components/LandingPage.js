@@ -100,7 +100,7 @@ export default function PersistentDrawerLeft() {
         <Toolbar>
           <Container maxWidth="false">
             <Stack direction="row" spacing={5} justifyContent="space-between">
-              <h2>My Simple site of sadness</h2>
+              <h2 className="title-of-site">My Simple site of sadness</h2>
 
               <nav>
                 {[
