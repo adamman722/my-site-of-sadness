@@ -1,0 +1,20 @@
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+.Cheese > p {
+  font-size: 18px;
+  margin: auto;
+}
+
+@media (min-width: 1150px) {
+  .dropdown-menu.MuiButtonBase-root {
+    display: none;
+  }
+}
+@media (max-width: 1150px) {
+  .Cheese {
+    display: none;
+  }
+}

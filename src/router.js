@@ -16,6 +16,10 @@ export const router = createBrowserRouter([
         path: "Contact Me",
         element: <ContactMe />,
       },
+      {
+        path: "Resources",
+        element: <ContactMe />,
+      },
     ],
     errorElement: (
       <div>

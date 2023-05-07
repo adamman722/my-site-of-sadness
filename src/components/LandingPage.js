@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import ArrowUpawrd from "@mui/icons-material/ArrowUpward";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
@@ -22,8 +23,9 @@ import MailIcon from "@mui/icons-material/Mail";
 import { Link, Outlet } from "react-router-dom";
 import Container from "@mui/material/Container";
 import { Stack } from "@mui/system";
+import "./landingPageStyles.css";
 
-// const drawerWidth = 240;
+const drawerWidth = 240;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
   ({ theme, open }) => ({
@@ -39,7 +41,7 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
         easing: theme.transitions.easing.easeOut,
         duration: theme.transitions.duration.enteringScreen,
       }),
-      marginLeft: 0,
+      // marginLeft: 0,
     }),
   })
 );
@@ -96,64 +98,61 @@ export default function PersistentDrawerLeft() {
       {/* <CssBaseline /> */}
       <AppBar position="fixed" open={open}>
         <Toolbar>
-          {/* <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            // onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, ...(open && { display: "none" }) }}
-          >
-            <MenuIcon />
-          </IconButton> */}
+          <Container maxWidth="false">
+            <Stack direction="row" spacing={5} justifyContent="space-between">
+              <h2>My Simple site of sadness</h2>
 
-          <Container maxWidth="lg">
-            <Stack direction="row" justifyContent="space-between">
-              <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                sx={{ margin: "auto" }}
-              >
-                My Simple site
-              </Typography>
-              <Stack direction="row" justifyContent="end" spacing={5}>
+              <nav>
                 {[
                   "Home",
                   "About Me",
                   "My work",
                   "Simple Components",
                   "Contact me",
+                  "This new one added",
                 ].map((text, index) => (
                   <Link
                     to={text === "Home" ? "/" : text}
                     style={{
                       textDecoration: "none",
                       color: "white",
-                      padding: "10px",
+                      margin: "auto",
+                      padding: "0px",
                     }}
+                    className="Cheese"
                   >
-                    <Typography variant="h6">{text}</Typography>
+                    <p>{text}</p>
                   </Link>
                 ))}
-              </Stack>
+              </nav>
             </Stack>
           </Container>
+          <IconButton
+            className="dropdown-menu"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            edge="start"
+            sx={{ mr: 0, ...(open && { display: "none" }) }}
+          >
+            <MenuIcon fontSize="large" />
+          </IconButton>
         </Toolbar>
       </AppBar>
-      {/* <Drawer
+      <Drawer
         sx={{
-          width: drawerWidth,
           flexShrink: 0,
           border: "none",
           "& .MuiDrawer-paper": {
             //add color here for the whole thing
-            borderRight: "2px solid black",
-            width: drawerWidth,
+
+            borderBottom: "2px solid black",
+            width: -drawerWidth,
             boxSizing: "border-box",
           },
         }}
         variant="persistent"
-        anchor="left"
+        anchor="top"
         open={open}
       >
         <DrawerHeader
@@ -164,11 +163,7 @@ export default function PersistentDrawerLeft() {
           }}
         >
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "ltr" ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
+            {theme.direction === "ltr" ? <ArrowUpawrd /> : <ArrowUpawrd />}
           </IconButton>
         </DrawerHeader>
         <Divider sx={{ color: "black" }} />
@@ -177,6 +172,7 @@ export default function PersistentDrawerLeft() {
             <Link
               to={text === "Home" ? "/" : text}
               style={{ textDecoration: "none", color: "hotpink" }}
+              onClick={handleDrawerClose}
             >
               <ListItem key={text} disablePadding>
                 <ListItemButton>
@@ -195,6 +191,7 @@ export default function PersistentDrawerLeft() {
             <Link
               to={text}
               style={{ textDecoration: "none", color: "hotpink" }}
+              onClick={handleDrawerClose}
             >
               <ListItem key={text} disablePadding>
                 <ListItemButton>
@@ -208,15 +205,16 @@ export default function PersistentDrawerLeft() {
           ))}
         </List>
       </Drawer>
-        <DrawerHeader /> */}
+      {/* <DrawerHeader /> */}
       {/* My elements goe here */}
       <Main
-        // open={open}
+        open={open}
         sx={{
           background:
             "radial-gradient(circle, rgba(179,136,235,0.5986078886310905) 0%, rgba(247,174,248,0.5986078886310905) 63%, rgba(255,255,255,1) 83%)",
         }}
       >
+        {/* This is where other components get outputted */}
         <Outlet />
       </Main>
     </Box>
