@@ -92,7 +92,6 @@ export default function PersistentDrawerLeft() {
     <Box
       sx={{
         display: "flex",
-        height: "100vh",
       }}
     >
       {/* <CssBaseline /> */}
@@ -219,6 +218,7 @@ export default function PersistentDrawerLeft() {
             "radial-gradient(circle, rgba(179,136,235,0.5986078886310905) 0%, rgba(247,174,248,0.5986078886310905) 63%, rgba(255,255,255,1) 83%)",
           backgroundAttachment: "fixed",
           backgroundRepeat: "no-repeat",
+          minHeight: "100%",
         }}
       >
         {/* This is where other components get outputted */}
