@@ -30,6 +30,11 @@ const drawerWidth = 240;
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
   ({ theme, open }) => ({
     flexGrow: 1,
+    display: "flex",
+    flexWrap: "wrap",
+    alignContent: "flex-start",
+    gap: "10px",
+    justifyContent: "center",
     padding: theme.spacing(3),
     transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,
@@ -92,6 +97,7 @@ export default function PersistentDrawerLeft() {
     <Box
       sx={{
         display: "flex",
+
         minHeight: "100vh",
       }}
     >
@@ -99,7 +105,12 @@ export default function PersistentDrawerLeft() {
       <AppBar position="fixed" open={open}>
         <Toolbar>
           <Container maxWidth="false">
-            <Stack direction="row" spacing={5} justifyContent="space-between">
+            <Stack
+              direction="row"
+              spacing={5}
+              justifyContent="space-between"
+              flexShrink="1"
+            >
               <h2 className="title-of-site">My Simple site of sadness</h2>
 
               <nav>
@@ -110,6 +121,7 @@ export default function PersistentDrawerLeft() {
                   "Simple Components",
                   "Contact me",
                   "This new one added",
+                  "Resources",
                 ].map((text, index) => (
                   <Link
                     to={text === "Home" ? "/" : text}

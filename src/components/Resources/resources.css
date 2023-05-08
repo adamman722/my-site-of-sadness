@@ -1,0 +1,6 @@
+.resources-block {
+  width: 300px;
+}
+.resources-block > a > img {
+  height: 200px;
+}
