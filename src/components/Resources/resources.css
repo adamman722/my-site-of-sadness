@@ -2,6 +2,7 @@
   width: 250px;
 }
 .resources-block > a {
+  text-decoration: none;
 }
 .resources-block > a > img {
   height: 150px;

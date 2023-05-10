@@ -84,6 +84,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 export default function PersistentDrawerLeft() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [openSubDrawer, setOpenSubDrawer] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -91,6 +92,14 @@ export default function PersistentDrawerLeft() {
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+
+  const handleSubDrawerOpen = () => {
+    setOpenSubDrawer(true);
+  };
+
+  const handleSubDrawerClose = () => {
+    setOpenSubDrawer(false);
   };
 
   return (
@@ -188,6 +197,97 @@ export default function PersistentDrawerLeft() {
               to={text === "Home" ? "/" : text}
               style={{ textDecoration: "none", color: "hotpink" }}
               onClick={handleDrawerClose}
+            >
+              <ListItem key={text} disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  </ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+          ))}
+        </List>
+        <Divider sx={{ borderColor: "black", borderWidth: "1px" }} />
+        <List>
+          {["My work", "Simple Components", "Contact me", "Resources"].map(
+            (text, index) => {
+              if (text === "Resources") {
+                return (
+                  <ListItem
+                    key={text}
+                    disablePadding
+                    onClick={handleSubDrawerOpen}
+                  >
+                    <ListItemButton>
+                      <ListItemIcon>
+                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                      </ListItemIcon>
+                      <ListItemText primary={text} />
+                    </ListItemButton>
+                  </ListItem>
+                );
+              } else {
+                return (
+                  <Link
+                    to={text}
+                    style={{ textDecoration: "none", color: "hotpink" }}
+                    onClick={handleDrawerClose}
+                  >
+                    <ListItem key={text} disablePadding>
+                      <ListItemButton>
+                        <ListItemIcon>
+                          {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                        </ListItemIcon>
+                        <ListItemText primary={text} />
+                      </ListItemButton>
+                    </ListItem>
+                  </Link>
+                );
+              }
+            }
+          )}
+        </List>
+      </Drawer>
+      {/* Drawer 2 is here */}
+      <Drawer
+        sx={{
+          flexShrink: 0,
+          border: "none",
+          "& .MuiDrawer-paper": {
+            //add color here for the whole thing
+
+            borderBottom: "2px solid black",
+            width: -drawerWidth,
+            boxSizing: "border-box",
+          },
+        }}
+        variant="persistent"
+        anchor="top"
+        open={openSubDrawer}
+      >
+        <DrawerHeader
+          sx={{
+            backgroundColor: "hotpink",
+            borderBottom: "2px solid black",
+            minHeight: "66px",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <h3>My Simple site of Sadness</h3>
+          <IconButton onClick={handleSubDrawerClose}>
+            {theme.direction === "ltr" ? <ArrowUpawrd /> : <ArrowUpawrd />}
+          </IconButton>
+        </DrawerHeader>
+        <Divider sx={{ color: "black" }} />
+        <List>
+          {["Home", "About Me"].map((text, index) => (
+            <Link
+              to={text === "Home" ? "/" : text}
+              style={{ textDecoration: "none", color: "hotpink" }}
+              onClick={handleSubDrawerClose}
             >
               <ListItem key={text} disablePadding>
                 <ListItemButton>
