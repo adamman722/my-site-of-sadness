@@ -1,8 +1,8 @@
 import React from "react";
 import Resource from "./Resource";
 import { data as content } from "../../db";
-function MainResourcePage() {
-  console.log(content);
+function MainResourcePage({ location }) {
+  console.log(location);
   let moreContent = [...content];
   return (
     <>

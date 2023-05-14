@@ -5,6 +5,7 @@ import LandingPage from "./components/LandingPage";
 import Resource from "./components/Resources/Resource";
 import MainResourcePage from "./components/Resources/MainResourcePage";
 
+//I am going to to take the data through here and pass it to the right component
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -19,9 +20,15 @@ export const router = createBrowserRouter([
         element: <ContactMe />,
       },
       {
-        path: "Resources",
-        element: <MainResourcePage />,
+        path: "/Resources/JavaScript",
+        element: <MainResourcePage location="JavaScript" />,
       },
+      { path: "/Resources/CSharp", element: <MainResourcePage /> },
+      { path: "/Resources/CSS", element: <MainResourcePage /> },
+      { path: "/Resources/HTML", element: <MainResourcePage /> },
+      { path: "/Resources/Python", element: <MainResourcePage /> },
+      { path: "/Resources/React", element: <MainResourcePage /> },
+      { path: "/Resources/TypeScript", element: <MainResourcePage /> },
     ],
     errorElement: (
       <div>

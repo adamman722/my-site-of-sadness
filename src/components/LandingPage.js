@@ -1,19 +1,15 @@
 import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import "./landing_page_styles/styles.css";
-import logo from "../assets/Img/MyLogo.png";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
-import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ArrowUpawrd from "@mui/icons-material/ArrowUpward";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -100,6 +96,7 @@ export default function PersistentDrawerLeft() {
 
   const handleSubDrawerClose = () => {
     setOpenSubDrawer(false);
+    handleDrawerClose();
   };
 
   return (
@@ -129,7 +126,7 @@ export default function PersistentDrawerLeft() {
                   "My work",
                   "Simple Components",
                   "Contact me",
-                  "This new one added",
+
                   "Resources",
                 ].map((text, index) => (
                   <Link
@@ -138,7 +135,9 @@ export default function PersistentDrawerLeft() {
                       textDecoration: "none",
                       color: "white",
                       margin: "auto",
-                      padding: "0px",
+                      padding: "5px",
+                      border: "1px solid black",
+                      borderRadius: "5px",
                     }}
                     className="Cheese"
                   >
@@ -283,9 +282,17 @@ export default function PersistentDrawerLeft() {
         </DrawerHeader>
         <Divider sx={{ color: "black" }} />
         <List>
-          {["Home", "About Me"].map((text, index) => (
+          {[
+            "JavaScript",
+            "CSharp",
+            "CSS",
+            "HTML",
+            "Python",
+            "React",
+            "TypeScript",
+          ].map((text, index) => (
             <Link
-              to={text === "Home" ? "/" : text}
+              to={`/Resources/${text}`}
               style={{ textDecoration: "none", color: "hotpink" }}
               onClick={handleSubDrawerClose}
             >
@@ -300,8 +307,8 @@ export default function PersistentDrawerLeft() {
             </Link>
           ))}
         </List>
-        <Divider sx={{ borderColor: "black", borderWidth: "1px" }} />
-        <List>
+        {/* <Divider sx={{ borderColor: "black", borderWidth: "1px" }} /> */}
+        {/* <List>
           {["My work", "Simple Components", "Contact me", "Resources"].map(
             (text, index) => (
               <Link
@@ -320,7 +327,7 @@ export default function PersistentDrawerLeft() {
               </Link>
             )
           )}
-        </List>
+        </List> */}
       </Drawer>
       {/* <DrawerHeader /> */}
       {/* My elements goe here */}
